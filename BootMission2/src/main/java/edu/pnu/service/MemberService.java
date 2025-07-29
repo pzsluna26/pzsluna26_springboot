@@ -6,6 +6,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6ab0409 (upload)
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -15,8 +19,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import lombok.Builder;
 
+<<<<<<< HEAD
 =======
 >>>>>>> branch 'main' of https://github.com/pzsluna26/pzsluna26_SpringBoot.git
+=======
+
+>>>>>>> 6ab0409 (upload)
 import edu.pnu.domain.MemberDTO;
 
 
