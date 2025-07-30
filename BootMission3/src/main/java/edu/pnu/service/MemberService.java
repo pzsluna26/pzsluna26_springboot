@@ -7,7 +7,7 @@ import edu.pnu.domain.MemberDTO;
 
 //BootMission3: list (가짜데이터) 말고 memberDAO 객체(DB데이터) 가져오기  
 
-@Service
+
 public class MemberService {
 	
 		private MemberDao memberDao;
