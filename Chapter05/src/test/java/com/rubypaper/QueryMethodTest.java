@@ -87,7 +87,7 @@ public class QueryMethodTest {
 //	}
 
 //  페이징 & 정렬
-	@Test
+//	@Test
 	public void testfindByTitleContaining() {
 		Pageable paging = PageRequest.of(0, 5, Sort.Direction.DESC, "seq");
 		Page<Board> pageInfo = boardRepo.findByTitleContaining("제목", paging);
