@@ -1,4 +1,4 @@
-package com.rubypapper;
+package com.rubypaper;
 
 import java.util.Date;
 import java.util.List;
@@ -10,7 +10,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.NamedQuery;
 import javax.persistence.Persistence;
 
-import com.rubypapper.domain.Board;
+import com.rubypaper.domain.Board;
 
 public class JPAClient {
 
