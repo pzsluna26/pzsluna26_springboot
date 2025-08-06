@@ -1,4 +1,4 @@
-package com.rubypapper.domain;
+package com.rubypaper.domain;
 
 import java.util.Date;
 import javax.persistence.*;

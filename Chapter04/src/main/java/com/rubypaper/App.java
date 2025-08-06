@@ -1,4 +1,4 @@
-package com.rubypapper;
+package com.rubypaper;
 
 /**
  * Hello world!
