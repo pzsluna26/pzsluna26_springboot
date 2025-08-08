@@ -1,5 +1,6 @@
 package com.rubypaper.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,33 +23,52 @@ public class TestController {
 	@Autowired
 	private BoardRepository boardRepo;
 
+	// 검색결과목록리턴
 	@GetMapping("/board")
 	public List<Board> getBoards() {
-		return boardRepo.findAll(); // 검색결과목록리턴
+		return boardRepo.findAll(); 
 	}
 
+	// 검색결과객체리턴
 	@GetMapping("/board/{seq}")
 	public Board getBoard(@PathVariable Long seq) {
-		return null; // 검색결과객체리턴
+		return boardRepo.findById(seq).orElse(null); 
 	}
 
+	// 입력객체리턴
 	@PostMapping("/board")
 	public Board postBoard(@RequestBody Board board) {
-		return boardRepo.save(board); // 입력객체리턴
+		return boardRepo.save(board);
 	}
 
-	@PutMapping("/board")
-	public Board putBoard(Board board) {
-		return null; // 수정객체리턴
+	// 수정객체리턴
+	@PutMapping("/board/{seq}")
+	public Board putBoard(@PathVariable Long seq, @RequestBody Board board) {
+		board.setSeq(seq);
+		return boardRepo.save(board);  
 	}
 
-	@PatchMapping("/board")
-	public Board patchBoard(Board board) {
-		return null; // 수정객체리턴
+	// 수정객체리턴
+	@PatchMapping("/board/{seq}")
+	public Board patchBoard(@PathVariable Long seq, @RequestBody Board board) {
+		Board boardTemp = boardRepo.findById(seq).get();
+		board.setSeq(seq);
+		if(board.getTitle() == null)
+			board.setTitle(boardTemp.getTitle());
+		if(board.getWriter() == null)
+			board.setWriter(boardTemp.getWriter());
+		if(board.getContent() == null)
+			board.setContent(boardTemp.getContent());
+		
+		board.setCreateDate(new Date());
+		board.setCnt(boardTemp.getCnt());
+		
+		return boardRepo.save(board);  
 	}
 
+	// 삭제객체리턴
 	@DeleteMapping("/board/{seq}")
-	public Board deleteBoard(@PathVariable Long seq) {
-		return null; // 삭제객체리턴
+	public void deleteBoard(@PathVariable Long seq) {
+		boardRepo.deleteById(seq); 
 	}
 }
