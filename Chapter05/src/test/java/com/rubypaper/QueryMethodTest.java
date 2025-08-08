@@ -36,7 +36,7 @@ public class QueryMethodTest {
 		}
 	}
 	
-//	@Test
+	@Test
 	 public void testFindByTitle() {
 		 List<Board> boardList = boardRepo.findByTitle("테스트 제목 10");
 		 System.out.println("검색 결과");
